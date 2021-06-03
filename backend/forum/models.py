@@ -4,7 +4,7 @@ from django.conf import settings
 class Post(models.Model):
 	user = models.ForeignKey (settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	canal = models.ForeignKey ("Canal", on_delete=models.CASCADE)
-	data_cracao = models.DateTimeField (auto_now_add=True)
+	data_criacao = models.DateTimeField (auto_now_add=True)
 	texto = models.TextField (max_length=255)
 	titulo = models.CharField (max_length=255)
 	likes = models.BigIntegerField (default=0)
@@ -16,7 +16,7 @@ class Post(models.Model):
 class Comentario (models.Model):
 	user = models.ForeignKey (settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	post = models.ForeignKey ("Post", on_delete=models.CASCADE)
-	data_cracao = models.DateTimeField (auto_now_add=True)
+	data_criacao = models.DateTimeField (auto_now_add=True)
 	texto = models.TextField (max_length=255)
 
 	def __str__(self):
