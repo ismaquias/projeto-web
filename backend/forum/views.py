@@ -1,6 +1,17 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from rest_framework import viewsets
+from .serializers import PostSerializer, ComentarioSerializer, CanalSerializer
 
-from django.shortcuts import render
+from .models import Canal, Comentario, Post
 
-# Create your views here.
+class CanalViewSet(viewsets.ModelViewSet):
+	queryset = Canal.objects.all()
+	serializer_class = CanalSerializer
+	
+class ComentarioViewSet(viewsets.ModelViewSet):
+	queryset = Comentario.objects.all()
+	serializer_class = ComentarioSerializer
+
+class PostViewSet(viewsets.ModelViewSet):
+	#queryset = Post.objects.filter(titulo="xyz")
+	queryset = Post.objects.all()
+	serializer_class = PostSerializer
