@@ -1,11 +1,11 @@
 from rest_framework import serializers
 from forum.models import Post, Comentario, Canal
 
-class PostSerializer (serializers.HyperlinkModelSerializer):
+class PostSerializer (serializers.ModelSerializer):
 	class Meta:
 		model = Post
 		fields = [ 
-		"id", "data_criacao", "user", "canal", "titulo", "testo", "likes", "deslikes"
+		"id", "data_criacao", "user", "canal", "titulo", "texto", "likes", "deslikes"
 		]
 #		exclude = ["user"]
 
