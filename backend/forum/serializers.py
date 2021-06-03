@@ -9,13 +9,13 @@ class PostSerializer (serializers.HyperlinkModelSerializer):
 		]
 #		exclude = ["user"]
 
-class ComentarioSerializer (serializers.HyperlinkModelSerializer):
+class ComentarioSerializer (serializers.ModelSerializer):
 	class Meta:
 		model = Comentario
 		fields = "__all__"
 #		exclude = ["user"]
 
-class CanalSerializer (serializers.HyperlinkModelSerializer):
+class CanalSerializer (serializers.ModelSerializer):
 	class Meta:
 		model = Canal
 		fields = "__all__"

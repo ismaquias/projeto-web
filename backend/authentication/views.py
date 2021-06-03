@@ -1,6 +1,8 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from rest_framework import serializers, viewsets
 
-from django.shortcuts import render
+from .models import User
+from .serializers import UserSerializer
 
-# Create your views here.
+class UserViewSet (viewsets.ModelViewSet):
+	queryset = User.objects.all()
+ 	serializer_class = UserSerializer
