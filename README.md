@@ -11,5 +11,4 @@ psycopg2.binary==2.8.6,
 db-sqlite3==0.0.1,
 
 # executando
-para iniciar a aplicação basta executar o arquivo main.py
-
+django-admin runserver IP:Porta
