@@ -3,7 +3,7 @@ from django.test import Client
 from django.test import reverse_lazy
 from django.contrib.auth import get_user_model
 
-from .models import Canal, Comentario, Post
+from backend.forum.models import Canal, Comentario, Post
 
 User = get_user_model()
 
@@ -22,8 +22,8 @@ class PostRouteTest (TestCase):
 		pass
 		
 	def test_list_posts (self):
-		url = reverse_lazy('post-list")
-		response = self.client.get (url)
+		url = reverse_lazy("post-list")
+		response = self.client.get(url)
 		self.assertEqual(response.json(),[])
 		
 	def test_create_post_success(self):

@@ -1,9 +1,10 @@
 from django.db.models.signals import post_save
+from django.db import models
 from django.dispatch import receiver
 
-from .models import Post
+from backend.forum.models import Post
 
-class Notification(model.Model):
+class Notification(models.Model):
 	def send_to_users(self, users):
 		pass # enviar para suários
 

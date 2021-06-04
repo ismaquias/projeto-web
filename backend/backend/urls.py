@@ -5,7 +5,6 @@ from rest_framework import routers
 from forum import views as forum_views
 from authentication import views as auth_views
 
-
 router = routers.SimpleRouter()
 router.register(r'canais', forum_views.CanalViewSet)
 router.register(r'comentarios', forum_views.ComentarioViewSet)

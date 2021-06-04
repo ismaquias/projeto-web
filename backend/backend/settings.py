@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from pathlib import Path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+'''
+from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
+'''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -77,14 +79,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+DATABASES={
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
+'''
+DATABASES["default"] = {
+	"ENGINE": "django.db.backends.postgresql_psycopg2",
+	"NAME": "postgres", #os.environ["POSTGRES_DB"],
+	"USER": "postgres", #os.environ["POSTGRES_USER"],
+	"PASSWORD": "algumasenha", #os.environ["POSTGRES_PASSWORD"],
+	"HOST": "db", #os.environ["POSTGRES_HOST"],
+	"PORT": "5432", #os.environ["POSTGRES_PORT"],
+}
+'''
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 

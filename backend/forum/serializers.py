@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from forum.models import Post, Comentario, Canal
+from .models import Post, Comentario, Canal
 
 class PostSerializer (serializers.ModelSerializer):
 	class Meta:
